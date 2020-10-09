@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+}
+
+nav{
+    background-color: rgb(75, 31, 158);
+    color: #ffffff;
+    display: flex;
+    justify-content: space-around;
+    height: 52px;
+    align-items: center;
+}
+
+.logo h4{
+    font-size: 22px;
+    letter-spacing: 3px;
+}
+
+nav ul{
+    width: 45%;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav ul li a{
+    text-decoration: none;
+    font-size: 18px;
+    color: #e1c6ff;
+}
+
+nav ul li a:hover{
+    color: #fbf7ff;
+    transition: 0.5s;
+    font-weight: 400;
+}
+/* hamburger menu */
+.toggle-menu {
+    display: flex;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.toggle-menu span{
+    transition: all 0.5s;
+}
+/* awal animasi hamburger menu */
+.change span:nth-child(1) {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 8px);
+}
+  
+.change span:nth-child(2) {opacity: 0;}
+  
+.change span:nth-child(3) {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-3px, -5px);
+    
+}
+
+/* akhir animasi */
+
+.toggle-menu span{
+    display: block;
+    width: 32px;
+    height: 3px;
+    background-color: #ffffff;
+    border-radius: 5px;
+}
+
+/* breakpoint responsive */
+/* responsive tablet */
+@media screen and (max-width:768px) {
+    nav ul{
+        width: 50%;
+    }
+}
+
+/* responsive mobike */
+@media screen and (max-width:576px){
+    nav ul{
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 80%;
+        flex-direction: column;
+        text-align: center;
+        justify-content: space-evenly;
+        background-color: rgb(75, 31, 158);
+        z-index: -1;
+        transform: translateX(100%);
+        transition: all 1s;
+        opacity: 0;
+    }
+
+    nav ul.slide{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@media screen and (min-width:576px){
+    .toggle-menu{
+        display: none;
+    }
+}
